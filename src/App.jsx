@@ -1,4 +1,6 @@
 import { useState } from "react"
+import Header from "./components/Header"
+import Nav from "./components/Nav"
 import "./App.css"
 
 function App() {
@@ -6,9 +8,8 @@ function App() {
 
 	return (
 		<>
-			<header>
-				<h1>MovieFlex</h1>
-			</header>
+			<Header></Header>
+			<Nav></Nav>
 			<h2></h2>
 		</>
 	)
