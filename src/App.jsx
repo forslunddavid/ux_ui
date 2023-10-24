@@ -9,17 +9,22 @@ import BardiagramMonth from "./components/bardiagram_months"
 import CirclediagramGenre from "./components/circlediagram_genres"
 
 function App() {
-	const [count, setCount] = useState(0)
+	const [showMovies, setShowMovies] = useState(true)
 
 	return (
 		<>
 			<Header></Header>
-			<Nav></Nav>
-			{/* <Movies></Movies> */}
-			<CircleDiagramLanguage></CircleDiagramLanguage>
-			<LineDiagramLength></LineDiagramLength>
-			<BardiagramMonth></BardiagramMonth>
-			<CirclediagramGenre></CirclediagramGenre>
+			<Nav setShowMovies={setShowMovies} />
+			{showMovies ? (
+				<Movies />
+			) : (
+				<>
+					<CircleDiagramLanguage />
+					<LineDiagramLength />
+					<BardiagramMonth />
+					<CirclediagramGenre />
+				</>
+			)}
 			<h2></h2>
 		</>
 	)

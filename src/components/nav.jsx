@@ -1,11 +1,9 @@
-function Nav() {
+function Nav({ setShowMovies }) {
 	return (
-		<>
-			<nav>
-				<p>Filmer</p>
-				<p>Data</p>
-			</nav>
-		</>
+		<nav>
+			<button onClick={() => setShowMovies(true)}>Filmer</button>
+			<button onClick={() => setShowMovies(false)}>Data</button>
+		</nav>
 	)
 }
 
