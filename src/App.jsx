@@ -1,6 +1,7 @@
 import { useState } from "react"
 import Header from "./components/Header"
 import Nav from "./components/Nav"
+import Movies from "./components/movies"
 import "./App.css"
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
 		<>
 			<Header></Header>
 			<Nav></Nav>
+			<Movies></Movies>
 			<h2></h2>
 		</>
 	)
