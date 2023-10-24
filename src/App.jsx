@@ -6,6 +6,7 @@ import CircleDiagramLanguage from "./components/circlediagram_language"
 import "./App.css"
 import LineDiagramLength from "./components/linediagram_length"
 import BardiagramMonth from "./components/bardiagram_months"
+import CirclediagramGenre from "./components/circlediagram_genres"
 
 function App() {
 	const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
 			<CircleDiagramLanguage></CircleDiagramLanguage>
 			<LineDiagramLength></LineDiagramLength>
 			<BardiagramMonth></BardiagramMonth>
+			<CirclediagramGenre></CirclediagramGenre>
 			<h2></h2>
 		</>
 	)
