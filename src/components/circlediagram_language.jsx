@@ -29,11 +29,11 @@ const specialsConfig = getSpecialsConfig()
 const CircleDiagramLanguage = () => {
 	return (
 		<section>
-			<h2>Specials by Language</h2>
+			<h2>Språk Specials</h2>
 			<Pie data={specialsConfig} />
-			<h2>Feature-Films by Language</h2>
+			<h2>Språk Filmer</h2>
 			<Pie data={featureFilmsConfig} />
-			<h2>Documentaries by Language</h2>
+			<h2>Språk Dokumentärer</h2>
 			<Pie data={documentariesConfig} />
 		</section>
 	)

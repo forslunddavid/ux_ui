@@ -12,15 +12,15 @@ function Movies() {
 
 	return (
 		<div>
-			<h1>All Movies</h1>
+			<h1>Alla Filmer</h1>
 			<ul>
 				{allMovies.map((movie, index) => (
 					<li key={index}>
 						<h3>{movie.Title}</h3>
 						<p>Genre: {movie.Genre}</p>
-						<p>Premiere: {movie.Premiere}</p>
-						<p>Runtime: {movie.Runtime}</p>
-						<p>Language: {movie.Language}</p>
+						<p>Premiär: {movie.Premiere}</p>
+						<p>Speltid: {movie.Runtime}</p>
+						<p>Språk: {movie.Language}</p>
 					</li>
 				))}
 			</ul>
