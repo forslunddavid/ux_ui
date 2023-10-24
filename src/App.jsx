@@ -1,7 +1,8 @@
 import { useState } from "react"
-import Header from "./components/Header"
-import Nav from "./components/Nav"
+import Header from "./components/header"
+import Nav from "./components/nav"
 import Movies from "./components/movies"
+import CircleDiagramLanguage from "./components/cirkeldiagram_language"
 import "./App.css"
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
 		<>
 			<Header></Header>
 			<Nav></Nav>
-			<Movies></Movies>
+			{/* <Movies></Movies> */}
+			<CircleDiagramLanguage></CircleDiagramLanguage>
 			<h2></h2>
 		</>
 	)
