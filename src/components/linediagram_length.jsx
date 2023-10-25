@@ -1,13 +1,8 @@
 import {
 	Chart as ChartJS,
-	ArcElement,
 	Tooltip,
 	Legend,
-	BarElement,
-	LinearScale,
-	Title,
 	PointElement,
-	CategoryScale,
 	LineElement,
 } from "chart.js"
 import { Line } from "react-chartjs-2"
