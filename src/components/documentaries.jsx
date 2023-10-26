@@ -6,7 +6,7 @@ function Documentaries() {
 	return (
 		<>
 			<div>
-				<h1>Dokumentärer</h1>
+				<h2>Dokumentärer</h2>
 				<ul className="moviecontainer">
 					{documentaries.map((movie, index) => (
 						<li className="movie" key={index}>

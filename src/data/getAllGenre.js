@@ -24,6 +24,8 @@ const colors = [
 export function getGenreConfig(documentaries, specials, featureFilms) {
 	const allData = [...documentaries, ...specials, ...featureFilms]
 
+	console.log(allData, "allData")
+
 	const genres = {}
 
 	// Loopa igenom alla filmer

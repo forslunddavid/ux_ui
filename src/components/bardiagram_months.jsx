@@ -31,8 +31,10 @@ const BardiagramMonth = () => {
 	)
 	return (
 		<section>
-			<h2>Premiärmånad</h2>
-			<Bar data={allMonthsConfig} />
+			<div className="card">
+				<h2>Premiärmånad</h2>
+				<Bar data={allMonthsConfig} />
+			</div>
 		</section>
 	)
 }

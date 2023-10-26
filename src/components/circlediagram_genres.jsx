@@ -32,8 +32,10 @@ const CirclediagramGenre = () => {
 
 	return (
 		<section>
-			<h2>Genrer</h2>
-			<Pie data={allGenreConfig} />
+			<div className="card">
+				<h2>Genrer</h2>
+				<Pie data={allGenreConfig} />
+			</div>
 		</section>
 	)
 }

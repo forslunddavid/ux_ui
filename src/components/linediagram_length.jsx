@@ -22,8 +22,10 @@ const LineDiagramLength = () => {
 	)
 	return (
 		<section>
-			<h2>Speltid Filmer</h2>
-			<Line data={allLengthConfig} />
+			<div className="card">
+				<h2>Speltid Filmer</h2>
+				<Line data={allLengthConfig} />
+			</div>
 		</section>
 	)
 }

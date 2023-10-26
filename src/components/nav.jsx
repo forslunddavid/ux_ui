@@ -47,7 +47,7 @@ function Nav({ onCategoryChange }) {
 	// }
 
 	return (
-		<section className="navbar">
+		<section className="navbar" id="navbar">
 			<motion.nav initial={false} className="menu">
 				<div className={`menu-button ${filmsOpen ? "open" : ""}`}>
 					<motion.button
@@ -245,7 +245,7 @@ function Nav({ onCategoryChange }) {
 					</motion.ul>
 				</div>
 
-				<div className="menu-button">
+				<div className="menu-button search-button">
 					<motion.button
 						whileTap={{ scale: 0.9 }}
 						whileHover={{

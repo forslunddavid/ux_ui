@@ -1,4 +1,6 @@
-import data from "./documentaries.json"
+// import data from "./documentaries.json"
+// import data from "./feature-films.json"
+// import data from "./specials.json"
 
 const colors = [
 	"#4F3674",
@@ -23,14 +25,11 @@ const colors = [
 	"#1B325F",
 ]
 
-export function getDocumentariesConfig() {
-	// Objekt för att hålla antal filmer per språk
-	const languageCounter = []
+export function getAllLanguagesConfig(documentaries, specials, featureFilms) {
+	const allData = [...documentaries, ...specials, ...featureFilms]
+	const languageCounter = {}
 
-	// Loopa igenom alla dokumentärfilmer
-	// Hämta språk för aktuell film
-	// Öka countern för det språket, eller sätt till 1 om nytt
-	data.forEach((movie) => {
+	allData.forEach((movie) => {
 		const language = movie.Language
 		if (languageCounter[language]) {
 			languageCounter[language]++
@@ -39,7 +38,8 @@ export function getDocumentariesConfig() {
 		}
 	})
 
-	// Mappa språken till antal filmer per språk
+	console.log(allData, "allData")
+
 	const uniqueLanguages = Object.keys(languageCounter)
 	const languageCounterArray = uniqueLanguages.map(
 		(language) => languageCounter[language]

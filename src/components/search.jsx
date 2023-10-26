@@ -27,14 +27,16 @@ const MoviesBySearch = () => {
 
 	return (
 		<div>
-			<section>
+			<section className="search-section">
 				<input
+					className="search-bar"
 					type="text"
 					placeholder="Sök efter filmer"
 					value={searchTerm}
 					onChange={handleChange}
 				/>
-
+			</section>
+			<div className="search-results">
 				{filteredMovies.length === 1 ? (
 					<>
 						{/* Visa detaljer om en enskild film om bara en träff finns */}
@@ -58,7 +60,7 @@ const MoviesBySearch = () => {
 							))}
 					</ul>
 				)}
-			</section>
+			</div>
 		</div>
 	)
 }

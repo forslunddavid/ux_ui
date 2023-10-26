@@ -6,7 +6,7 @@ function FeatureFilms() {
 	return (
 		<>
 			<div>
-				<h1>Filmer</h1>
+				<h2>Filmer</h2>
 				<ul className="moviecontainer">
 					{featureFilms.map((movie, index) => (
 						<li className="movie" key={index}>

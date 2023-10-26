@@ -51,7 +51,7 @@ export function getSpecialsConfig() {
 				label: "Specials by languages",
 				data: languageCounterArray,
 				backgroundColor: colors,
-				radius: "100",
+				radius: "200",
 				pointRadius: 5,
 			},
 		],

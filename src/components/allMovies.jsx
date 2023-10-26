@@ -12,7 +12,7 @@ function AllMovies() {
 	return (
 		<>
 			<div>
-				<h1>Alla Filmer</h1>
+				<h2>Alla Filmer</h2>
 				<ul className="moviecontainer">
 					{allMovies.map((movie, index) => (
 						<li className="movie" key={index}>

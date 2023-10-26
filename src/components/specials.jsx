@@ -6,7 +6,7 @@ function Specials() {
 	return (
 		<>
 			<div>
-				<h1>Specials</h1>
+				<h2>Specials</h2>
 				<ul className="moviecontainer">
 					{specials.map((movie, index) => (
 						<li className="movie" key={index}>

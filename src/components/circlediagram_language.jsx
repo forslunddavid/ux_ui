@@ -17,25 +17,44 @@ ChartJS.register(
 )
 import { Pie } from "react-chartjs-2"
 
-import { getSpecialsConfig } from "../data/getSpecials"
-import { getFeatureFilmsConfig } from "../data/getFeatureFilms"
-import { getDocumentariesConfig } from "../data/getDocumentaries"
+import documentariesData from "../data/documentaries.json"
+import specialsData from "../data/specials.json"
+import featureData from "../data/feature-films.json"
 
-const documentariesConfig = getDocumentariesConfig()
-const featureFilmsConfig = getFeatureFilmsConfig()
-const specialsConfig = getSpecialsConfig()
+// import { getSpecialsConfig } from "../data/getSpecials"
+// import { getFeatureFilmsConfig } from "../data/getFeatureFilms"
+// import { getDocumentariesConfig } from "../data/getDocumentaries"
+import { getAllLanguagesConfig } from "../data/getAllLanguage"
+import "../App.css"
+
+// const documentariesConfig = getDocumentariesConfig()
+// const featureFilmsConfig = getFeatureFilmsConfig()
+// const specialsConfig = getSpecialsConfig()
 
 const CircleDiagramLanguage = () => {
+	const allLanguagesConfig = getAllLanguagesConfig(
+		documentariesData,
+		specialsData,
+		featureData
+	)
 	return (
 		<section>
-			<h2>Språk alla Filmer</h2>
-			{/* <Pie data={}></Pie> */}
-			<h2>Språk Specials</h2>
-			<Pie data={specialsConfig} />
-			<h2>Språk Filmer</h2>
-			<Pie data={featureFilmsConfig} />
-			<h2>Språk Dokumentärer</h2>
-			<Pie data={documentariesConfig} />
+			<div className="card">
+				<h2>Språk alla Filmer</h2>
+				<Pie data={allLanguagesConfig}></Pie>
+			</div>
+			{/* <div className="card">
+				<h2>Språk Specials</h2>
+				<Pie data={specialsConfig} />
+			</div>
+			<div className="card">
+				<h2>Språk Filmer</h2>
+				<Pie data={featureFilmsConfig} />
+			</div>
+			<div className="card">
+				<h2>Språk Dokumentärer</h2>
+				<Pie data={documentariesConfig} />
+			</div> */}
 		</section>
 	)
 }

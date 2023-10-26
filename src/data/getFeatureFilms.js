@@ -52,7 +52,7 @@ export function getFeatureFilmsConfig() {
 				label: "Feature Films by languages",
 				data: languageCounterArray,
 				backgroundColor: colors,
-				radius: "100",
+				radius: "200",
 				pointRadius: 5,
 			},
 		],
