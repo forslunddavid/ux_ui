@@ -1,0 +1,13 @@
+* Sortera språkdata i stigande och fallande ordning
+* Skilj mellan kategorier så att man kan se hur många documentaries, features och specials som släpptes under respektive månad. (Tre staplar per månad.)
+* Sortera på längd, kortast först
+* Visa antal filmer i varje genre i ett cirkeldiagram. Välj antingen feature films eller specials.
+	* Visa alla i stället alla filmers genrer i diagrammet, inklusive dokumentärer. (Det är okej att använda andra diagramtyper om datan inte får plats i cirkeln.)
+* CSS
+	* Nav menyn är inte riktigt i mitten.
+	* fixa responsivitet
+	* Diagrammen ser inte bra ut
+	* Cards för filmer
+	* Laddningsskärm?
+	* Dropdownmenyerna försvinner inte vid klick eller klick utanför.
+

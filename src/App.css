@@ -34,7 +34,7 @@ h1 {
 }
 
 .movie {
-	/* display: block; */
+	display: block;
 	border: solid #f3f3f3;
 	background-color: #ae8787;
 	border-radius: 8px;
@@ -111,7 +111,7 @@ ul {
 }
 
 li {
-	/* display: block; */
+	display: block;
 }
 
 ul,

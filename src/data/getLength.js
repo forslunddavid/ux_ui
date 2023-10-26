@@ -26,7 +26,6 @@ export function getLengthConfig(documentaries, specials, featureFilms) {
 	const featureFilmRuntimeCount = {}
 	const specialRuntimeCount = {}
 
-	// Loopa och öka countern
 	allData.forEach((movie) => {
 		const runtime = movie.Runtime
 		runtimeCount[runtime] = (runtimeCount[runtime] || 0) + 1
@@ -62,7 +61,7 @@ export function getLengthConfig(documentaries, specials, featureFilms) {
 	)
 
 	const uniqueFeatureFilmRuntime = Object.keys(featureFilmRuntimeCount)
-	const ffRuntimeCountsArray = uniqueFeatureFilmRuntime.map(
+	const featureFilmsRuntimeCountsArray = uniqueFeatureFilmRuntime.map(
 		(featureFilmRuntime) => featureFilmRuntimeCount[featureFilmRuntime]
 	)
 
@@ -96,7 +95,7 @@ export function getLengthConfig(documentaries, specials, featureFilms) {
 			},
 			{
 				label: "Features by runtime",
-				data: ffRuntimeCountsArray,
+				data: featureFilmsRuntimeCountsArray,
 				backgroundColor: "#e56b6f",
 				borderColor: "#d63d44",
 				pointRadius: 2,
