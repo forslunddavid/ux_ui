@@ -1,11 +1,6 @@
 * Sortera språkdata i stigande och fallande ordning VG
 * Skilj mellan kategorier så att man kan se hur många documentaries, features och specials som släpptes under respektive månad. (Tre staplar per månad.) VG
 * CSS
-	* Nav menyn är inte riktigt i mitten.
 	* fixa responsivitet *** inte nödvändigt ***
-	* Cards för filmer (snygga till)
-	* Sökfälts css
-	* Laddningsskärm?
-	* Scrollanimation
-	* Dölj Visa/info på cards vid hover
+
 
