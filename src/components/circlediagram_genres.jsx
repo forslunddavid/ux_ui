@@ -29,6 +29,7 @@ const CirclediagramGenre = () => {
 		specialsData,
 		featureData
 	)
+
 	return (
 		<section>
 			<h2>Genrer</h2>

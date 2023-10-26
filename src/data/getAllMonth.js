@@ -23,29 +23,26 @@ const colors = [
 
 export function getMonthConfig(documentaries, specials, featureFilms) {
 	const allData = [...documentaries, ...specials, ...featureFilms]
+	const premiereMonth = {}
 
-	const premiereMonth = []
-
-	// Loopa igenom alla filmer
-	// Hämta premieredatum och månad
-	// Öka countern för den månaden, eller sätt till 1 om ny månad.
+	// Loop through all movies
 	allData.forEach((movie) => {
 		const premiere = new Date(movie.Premiere)
 		const month = premiere.getMonth()
-		if (premiereMonth[month]) {
-			premiereMonth[month]++
-		} else {
+
+		if (!premiereMonth[month]) {
 			premiereMonth[month] = 1
+		} else {
+			premiereMonth[month]++
 		}
 	})
 
-	// Mappa månader till antal filmer
-	const uniqueMonth = Object.keys(premiereMonth).map((month) => Number(month))
-	const monthsArray = uniqueMonth.map((month) => premiereMonth[month])
+	// Extract unique months
+	const uniqueMonths = Object.keys(premiereMonth).map(Number)
+	const monthsArray = uniqueMonths.map((month) => premiereMonth[month])
 
-	// Returnera data för diagram
 	return {
-		labels: uniqueMonth.map((month) =>
+		labels: uniqueMonths.map((month) =>
 			new Date(0, month).toLocaleString("default", { month: "short" })
 		),
 		datasets: [
@@ -55,5 +52,62 @@ export function getMonthConfig(documentaries, specials, featureFilms) {
 				backgroundColor: colors,
 			},
 		],
+	}
+}
+
+export function getMonthConfigWithTypes(
+	documentaries,
+	specials,
+	featureFilms,
+	colors
+) {
+	const allData = [...documentaries, ...specials, ...featureFilms]
+
+	// Initialize data structures to store counts by month and type
+	const premiereMonth = {}
+	const movieTypes = {}
+
+	// Loop through all movies
+	allData.forEach((movie) => {
+		const premiere = new Date(movie.Premiere)
+		const month = premiere.getMonth()
+		const type = movie.Type
+
+		// Update counts by month
+		if (!premiereMonth[month]) {
+			premiereMonth[month] = {}
+		}
+		premiereMonth[month][type] = (premiereMonth[month][type] || 0) + 1
+
+		// Track movie types
+		if (!movieTypes[type]) {
+			movieTypes[type] = true
+		}
+	})
+
+	// Extract unique months and types
+	const uniqueMonths = Object.keys(premiereMonth).map(Number)
+	const uniqueTypes = Object.keys(movieTypes)
+
+	// Create datasets for each movie type
+	const datasets = uniqueTypes.map((type, index) => {
+		const data = uniqueMonths.map(
+			(month) => premiereMonth[month][type] || 0
+		)
+		return {
+			label: type,
+			data,
+			backgroundColor: colors[index % colors.length],
+		}
+	})
+
+	// Create labels for the unique months
+	const labels = uniqueMonths.map((month) =>
+		new Date(0, month).toLocaleString("default", { month: "short" })
+	)
+
+	return {
+		labels,
+		datasets,
 	}
 }

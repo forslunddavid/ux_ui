@@ -17,22 +17,26 @@ function App() {
 	return (
 		<>
 			<Header></Header>
-			<Nav onCategoryChange={setSelectedCategory} />
-			{selectedCategory === "search" && <MoviesBySearch />}
-
-			{selectedCategory === "all" && <AllMovies />}
-
-			{selectedCategory === "documentaries" && <Documentaries />}
-
-			{selectedCategory === "movies" && <FeatureFilms />}
-
-			{selectedCategory === "specials" && <Specials />}
-
 			<>
-				{selectedCategory === "language" && <CircleDiagramLanguage />}
-				{selectedCategory === "length" && <LineDiagramLength />}
-				{selectedCategory === "month" && <BardiagramMonth />}
-				{selectedCategory === "genre" && <CirclediagramGenre />}
+				<Nav onCategoryChange={setSelectedCategory} />
+				{selectedCategory === "search" && <MoviesBySearch />}
+
+				{selectedCategory === "all" && <AllMovies />}
+
+				{selectedCategory === "documentaries" && <Documentaries />}
+
+				{selectedCategory === "movies" && <FeatureFilms />}
+
+				{selectedCategory === "specials" && <Specials />}
+
+				<>
+					{selectedCategory === "language" && (
+						<CircleDiagramLanguage />
+					)}
+					{selectedCategory === "length" && <LineDiagramLength />}
+					{selectedCategory === "month" && <BardiagramMonth />}
+					{selectedCategory === "genre" && <CirclediagramGenre />}
+				</>
 			</>
 		</>
 	)
