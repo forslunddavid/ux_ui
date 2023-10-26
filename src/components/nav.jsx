@@ -10,15 +10,15 @@ const itemVariants = {
 		// Sätt y till 0 för att placera objektet på sin ursprungliga position.
 		y: 0,
 		// Använd en fjäderliknande övergång med specifika parametrar för smidig rörelse.
-		transition: { type: "spring", stiffness: 300, damping: 24 },
+		transition: { type: "spring", stiffness: 200, damping: 10 },
 	},
 	closed: {
 		// När menyn är stängd, sätt opacity till 0 för att gömma objektet.
 		opacity: 0,
 		// Flytta objektet nedåt (positivt y-värde) med 20 enheter för att dölja det.
 		y: 20,
-		// Använd en kortare övergångstid (0.2 sekunder) för snabb döljning.
-		transition: { duration: 0.2 },
+		// Använd en kortare övergångstid (0.3 sekunder) för snabb döljning.
+		transition: { duration: 0.3 },
 	},
 }
 
