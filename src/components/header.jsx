@@ -2,7 +2,7 @@ function Header() {
 	return (
 		<>
 			<header>
-				<h1>MovieFlex</h1>
+				<h1>Movieflex</h1>
 			</header>
 		</>
 	)

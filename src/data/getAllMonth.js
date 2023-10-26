@@ -26,6 +26,9 @@ export function getMonthConfig(documentaries, specials, featureFilms) {
 
 	const premiereMonth = []
 
+	// Loopa igenom alla filmer
+	// Hämta premieredatum och månad
+	// Öka countern för den månaden, eller sätt till 1 om ny månad.
 	allData.forEach((movie) => {
 		const premiere = new Date(movie.Premiere)
 		const month = premiere.getMonth()
@@ -36,9 +39,11 @@ export function getMonthConfig(documentaries, specials, featureFilms) {
 		}
 	})
 
+	// Mappa månader till antal filmer
 	const uniqueMonth = Object.keys(premiereMonth).map((month) => Number(month))
 	const monthsArray = uniqueMonth.map((month) => premiereMonth[month])
 
+	// Returnera data för diagram
 	return {
 		labels: uniqueMonth.map((month) =>
 			new Date(0, month).toLocaleString("default", { month: "short" })

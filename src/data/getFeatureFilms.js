@@ -24,8 +24,12 @@ const colors = [
 ]
 
 export function getFeatureFilmsConfig() {
+	// Objekt för att hålla antal filmer per språk
 	const languageCounter = []
 
+	// Loopa igenom alla långfilmer
+	// Hämta språk för aktuell film
+	// Öka countern för det språket, eller sätt till 1 om nytt
 	data.forEach((movie) => {
 		const language = movie.Language
 		if (languageCounter[language]) {
@@ -35,6 +39,7 @@ export function getFeatureFilmsConfig() {
 		}
 	})
 
+	// Mappa språken till antal filmer per språk
 	const uniqueLanguages = Object.keys(languageCounter)
 	const languageCounterArray = uniqueLanguages.map(
 		(language) => languageCounter[language]

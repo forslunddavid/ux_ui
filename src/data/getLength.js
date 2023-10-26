@@ -1,6 +1,7 @@
 export function getLengthConfig(documentaries, specials, featureFilms) {
 	const allData = [...documentaries, ...specials, ...featureFilms]
 
+	// Konvertera längden till minuter för varje film
 	allData.forEach((movie) => {
 		const duration = movie.Runtime
 		const parts = duration.split(" ")
@@ -19,11 +20,13 @@ export function getLengthConfig(documentaries, specials, featureFilms) {
 		movie.DurationInMinutes = totalMinutes
 	})
 
+	// Räkna antal filmer per längd
 	const runtimeCount = {}
 	const documentariesRuntimeCount = {}
 	const featureFilmRuntimeCount = {}
 	const specialRuntimeCount = {}
 
+	// Loopa och öka countern
 	allData.forEach((movie) => {
 		const runtime = movie.Runtime
 		runtimeCount[runtime] = (runtimeCount[runtime] || 0) + 1

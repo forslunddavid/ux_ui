@@ -10,6 +10,7 @@ const MoviesBySearch = () => {
 
 	const allData = [...documentariesData, ...specialsData, ...featureFilmsData]
 
+	// Funktion för att hantera sökningen
 	const handleSearch = () => {
 		const filteredMovies = allData.filter((movie) =>
 			movie.Title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -18,6 +19,7 @@ const MoviesBySearch = () => {
 		setFilteredMovies(filteredMovies)
 	}
 
+	// Funktion som hanterar ändringar i sökfältet
 	const handleChange = (e) => {
 		setSearchTerm(e.target.value)
 		handleSearch()
@@ -35,13 +37,19 @@ const MoviesBySearch = () => {
 
 				{filteredMovies.length === 1 ? (
 					<>
-						<li>Title: {filteredMovies[0].Title}</li>
-						<li>Duration: {filteredMovies[0].Runtime}</li>
-						<li>Released: {filteredMovies[0].Premiere}</li>
-						<li>Language: {filteredMovies[0].Language}</li>
+						{/* Visa detaljer om en enskild film om bara en träff finns */}
+						<div className=".movie-single-result-container ">
+							<div className="movie-single-result">
+								<li>Title: {filteredMovies[0].Title}</li>
+								<li>Duration: {filteredMovies[0].Runtime}</li>
+								<li>Released: {filteredMovies[0].Premiere}</li>
+								<li>Language: {filteredMovies[0].Language}</li>
+							</div>
+						</div>
 					</>
 				) : (
 					<ul>
+						{/* Visa en lista av filmer om det finns flera träffar */}
 						{searchTerm !== "" &&
 							searchResults.map((movie) => (
 								<li className="movie" key={movie.Title}>

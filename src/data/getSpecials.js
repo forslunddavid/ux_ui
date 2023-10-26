@@ -22,10 +22,13 @@ const colors = [
 	"#F9F9F4",
 	"#1B325F",
 ]
-
+// Räkna ut antal filmer per språk
 export function getSpecialsConfig() {
 	const languageCounter = []
 
+	// Loopa igenom alla filmer
+	// Hämta språket för aktuell film
+	// Öka countern för det språket, eller sätt till 1 om nytt språk
 	data.forEach((movie) => {
 		const language = movie.Language
 		if (languageCounter[language]) {
@@ -35,6 +38,7 @@ export function getSpecialsConfig() {
 		}
 	})
 
+	// Mappa språken till antal filmer per språk
 	const uniqueLanguages = Object.keys(languageCounter)
 	const languageCounterArray = uniqueLanguages.map(
 		(language) => languageCounter[language]

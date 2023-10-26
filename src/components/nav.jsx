@@ -5,13 +5,19 @@ import { motion } from "framer-motion"
 
 const itemVariants = {
 	open: {
+		// När menyn är öppen, sätt opacity till 1 för att göra objekt synliga.
 		opacity: 1,
+		// Sätt y till 0 för att placera objektet på sin ursprungliga position.
 		y: 0,
+		// Använd en fjäderliknande övergång med specifika parametrar för smidig rörelse.
 		transition: { type: "spring", stiffness: 300, damping: 24 },
 	},
 	closed: {
+		// När menyn är stängd, sätt opacity till 0 för att gömma objektet.
 		opacity: 0,
+		// Flytta objektet nedåt (positivt y-värde) med 20 enheter för att dölja det.
 		y: 20,
+		// Använd en kortare övergångstid (0.2 sekunder) för snabb döljning.
 		transition: { duration: 0.2 },
 	},
 }
@@ -24,6 +30,12 @@ function Nav({ onCategoryChange }) {
 	const handleClick = (category) => {
 		setSelectedCategory(category)
 		onCategoryChange(category)
+		closeMenus()
+	}
+
+	const closeMenus = () => {
+		setFilmsOpen(false)
+		setDataOpen(false)
 	}
 
 	return (
@@ -79,24 +91,44 @@ function Nav({ onCategoryChange }) {
 						style={{ pointerEvents: filmsOpen ? "auto" : "none" }}
 					>
 						<motion.li
+							whileTap={{ scale: 0.9 }}
+							whileHover={{
+								scale: 1.1,
+								transition: { duration: 0.2 },
+							}}
 							variants={itemVariants}
 							onClick={() => handleClick("all")}
 						>
 							Alla Filmer
 						</motion.li>
 						<motion.li
+							whileTap={{ scale: 0.9 }}
+							whileHover={{
+								scale: 1.1,
+								transition: { duration: 0.2 },
+							}}
 							variants={itemVariants}
 							onClick={() => handleClick("movies")}
 						>
 							Filmer
 						</motion.li>
 						<motion.li
+							whileTap={{ scale: 0.9 }}
+							whileHover={{
+								scale: 1.1,
+								transition: { duration: 0.2 },
+							}}
 							variants={itemVariants}
 							onClick={() => handleClick("specials")}
 						>
 							Specials
 						</motion.li>
 						<motion.li
+							whileTap={{ scale: 0.9 }}
+							whileHover={{
+								scale: 1.1,
+								transition: { duration: 0.2 },
+							}}
 							variants={itemVariants}
 							onClick={() => handleClick("documentaries")}
 						>
@@ -155,24 +187,44 @@ function Nav({ onCategoryChange }) {
 						style={{ pointerEvents: dataOpen ? "auto" : "none" }}
 					>
 						<motion.li
+							whileTap={{ scale: 0.9 }}
+							whileHover={{
+								scale: 1.1,
+								transition: { duration: 0.2 },
+							}}
 							variants={itemVariants}
 							onClick={() => handleClick("language")}
 						>
 							Språk
 						</motion.li>
 						<motion.li
+							whileTap={{ scale: 0.9 }}
+							whileHover={{
+								scale: 1.1,
+								transition: { duration: 0.2 },
+							}}
 							variants={itemVariants}
 							onClick={() => handleClick("month")}
 						>
 							Releasedatum
 						</motion.li>
 						<motion.li
+							whileTap={{ scale: 0.9 }}
+							whileHover={{
+								scale: 1.1,
+								transition: { duration: 0.2 },
+							}}
 							variants={itemVariants}
 							onClick={() => handleClick("length")}
 						>
 							Längd
 						</motion.li>
 						<motion.li
+							whileTap={{ scale: 0.9 }}
+							whileHover={{
+								scale: 1.1,
+								transition: { duration: 0.2 },
+							}}
 							variants={itemVariants}
 							onClick={() => handleClick("genre")}
 						>

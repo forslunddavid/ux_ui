@@ -26,6 +26,9 @@ export function getGenreConfig(documentaries, specials, featureFilms) {
 
 	const genres = {}
 
+	// Loopa igenom alla filmer
+	// Hämta genre, sätt till "Documentary" om den inte har någon genre
+	// Öka countern för genren, eller sätt till 1 om ny genre.
 	allData.forEach((movie) => {
 		let genre = movie.Genre
 		if (!genre) {
@@ -38,7 +41,7 @@ export function getGenreConfig(documentaries, specials, featureFilms) {
 			genres[genre] = 1
 		}
 	})
-
+	// Mappa ut olika genrer
 	const genreCountArray = Object.entries(genres).map(([genre, count]) => ({
 		genre,
 		count,
