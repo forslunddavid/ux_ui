@@ -85,7 +85,9 @@ h1 {
 	width: auto;
 	display: flex;
 	flex-direction: column;
-	/* z-index: 10; */
+	position: absolute;
+	z-index: 10;
+	top: 24%;
 }
 
 .menu > button {
@@ -119,6 +121,10 @@ li {
 	list-style: none;
 	margin: 0;
 	padding: 10px;
+}
+
+.open-menu {
+	z-index: 20000;
 }
 
 .movie-single-result-container {

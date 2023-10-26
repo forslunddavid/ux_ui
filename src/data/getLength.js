@@ -20,6 +20,8 @@ export function getLengthConfig(documentaries, specials, featureFilms) {
 		movie.DurationInMinutes = totalMinutes
 	})
 
+	allData.sort((a, b) => a.DurationInMinutes - b.DurationInMinutes)
+
 	// Räkna antal filmer per längd
 	const runtimeCount = {}
 	const documentariesRuntimeCount = {}

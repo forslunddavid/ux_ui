@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { motion } from "framer-motion"
 
 //Principer: Squash när jag trycker på knappen. Follow through, menyknapparna i dropdownen fortsätter röra sig lite efter att meny öppnat sig. Timing för att justera animeringars rörelser. Anticipation, när man hovrar över knapparna så blir de större (indikation på att man kan interagera med dem). Använde Pose to pose när jag designade menyrörelsen. (Exaggeration?)
@@ -38,6 +38,14 @@ function Nav({ onCategoryChange }) {
 		setDataOpen(false)
 	}
 
+	// const menuRef = useRef()
+
+	// const handleClickOutside = (e) => {
+	// 	if (openMenu && !menuRef.current.contains(e.target)) {
+	// 		closeMenus()
+	// 	}
+	// }
+
 	return (
 		<div className="navbar">
 			<motion.nav initial={false} className="menu">
@@ -66,7 +74,9 @@ function Nav({ onCategoryChange }) {
 					</motion.button>
 
 					<motion.ul
-						className={`menu ul ${filmsOpen ? "open" : ""}`}
+						className={`open-menu menu ul ${
+							filmsOpen ? "open" : ""
+						}`}
 						animate={filmsOpen ? "open" : "closed"}
 						variants={{
 							open: {
@@ -162,7 +172,9 @@ function Nav({ onCategoryChange }) {
 					</motion.button>
 
 					<motion.ul
-						className={`menu ul ${dataOpen ? "open" : ""}`}
+						className={`open-menu menu ul ${
+							dataOpen ? "open" : ""
+						}`}
 						animate={dataOpen ? "open" : "closed"}
 						variants={{
 							open: {
