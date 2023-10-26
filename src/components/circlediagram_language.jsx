@@ -28,6 +28,8 @@ const specialsConfig = getSpecialsConfig()
 const CircleDiagramLanguage = () => {
 	return (
 		<section>
+			<h2>Språk alla Filmer</h2>
+			{/* <Pie data={}></Pie> */}
 			<h2>Språk Specials</h2>
 			<Pie data={specialsConfig} />
 			<h2>Språk Filmer</h2>

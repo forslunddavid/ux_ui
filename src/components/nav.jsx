@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 
+//Principer: Squash när jag trycker på knappen. Follow through, menyknapparna i dropdownen fortsätter röra sig lite efter att meny öppnat sig. Timing för att justera animeringars rörelser. Anticipation, när man hovrar över knapparna så blir de större (indikation på att man kan interagera med dem). Använde Pose to pose när jag designade menyrörelsen. (Exaggeration?)
+
 const itemVariants = {
 	open: {
 		opacity: 1,
@@ -14,17 +16,26 @@ const itemVariants = {
 	},
 }
 
-function Nav({ setShowMovies, setShowSearch }) {
+function Nav({ onCategoryChange }) {
 	const [filmsOpen, setFilmsOpen] = useState(false)
 	const [dataOpen, setDataOpen] = useState(false)
-	const [searchOpen, setSearchOpen] = useState(false)
+	const [selectedCategory, setSelectedCategory] = useState("all")
+
+	const handleClick = (category) => {
+		setSelectedCategory(category)
+		onCategoryChange(category)
+	}
 
 	return (
 		<div className="navbar">
 			<motion.nav initial={false} className="menu">
 				<div className={`menu-button ${filmsOpen ? "open" : ""}`}>
 					<motion.button
-						whileTap={{ scale: 0.97 }}
+						whileTap={{ scale: 0.9 }}
+						whileHover={{
+							scale: 1.1,
+							transition: { duration: 0.2 },
+						}}
 						onClick={() => setFilmsOpen(!filmsOpen)}
 					>
 						Filmer
@@ -67,12 +78,28 @@ function Nav({ setShowMovies, setShowSearch }) {
 						}}
 						style={{ pointerEvents: filmsOpen ? "auto" : "none" }}
 					>
-						<motion.li variants={itemVariants}>
+						<motion.li
+							variants={itemVariants}
+							onClick={() => handleClick("all")}
+						>
 							Alla Filmer
 						</motion.li>
-						<motion.li variants={itemVariants}>Filmer</motion.li>
-						<motion.li variants={itemVariants}>Specials</motion.li>
-						<motion.li variants={itemVariants}>
+						<motion.li
+							variants={itemVariants}
+							onClick={() => handleClick("movies")}
+						>
+							Filmer
+						</motion.li>
+						<motion.li
+							variants={itemVariants}
+							onClick={() => handleClick("specials")}
+						>
+							Specials
+						</motion.li>
+						<motion.li
+							variants={itemVariants}
+							onClick={() => handleClick("documentaries")}
+						>
 							Dokumentärer
 						</motion.li>
 					</motion.ul>
@@ -80,7 +107,11 @@ function Nav({ setShowMovies, setShowSearch }) {
 
 				<div className="menu-button">
 					<motion.button
-						whileTap={{ scale: 0.97 }}
+						whileTap={{ scale: 0.9 }}
+						whileHover={{
+							scale: 1.1,
+							transition: { duration: 0.2 },
+						}}
 						onClick={() => setDataOpen(!dataOpen)}
 					>
 						Data
@@ -123,22 +154,45 @@ function Nav({ setShowMovies, setShowSearch }) {
 						}}
 						style={{ pointerEvents: dataOpen ? "auto" : "none" }}
 					>
-						<motion.li variants={itemVariants}>Språk</motion.li>
-						<motion.li variants={itemVariants}>
+						<motion.li
+							variants={itemVariants}
+							onClick={() => handleClick("language")}
+						>
+							Språk
+						</motion.li>
+						<motion.li
+							variants={itemVariants}
+							onClick={() => handleClick("month")}
+						>
 							Releasedatum
 						</motion.li>
-						<motion.li variants={itemVariants}>Längd</motion.li>
-						<motion.li variants={itemVariants}>Genre</motion.li>
+						<motion.li
+							variants={itemVariants}
+							onClick={() => handleClick("length")}
+						>
+							Längd
+						</motion.li>
+						<motion.li
+							variants={itemVariants}
+							onClick={() => handleClick("genre")}
+						>
+							Genre
+						</motion.li>
 					</motion.ul>
 				</div>
 
 				<div className="menu-button">
 					<motion.button
-						whileTap={{ scale: 0.97 }}
-						onClick={() => {
-							setShowSearch(true)
-							setShowMovies(false)
+						whileTap={{ scale: 0.9 }}
+						whileHover={{
+							scale: 1.1,
+							transition: { duration: 0.2 },
 						}}
+						onClick={() => handleClick("search")}
+						// onClick={() => {
+						// 	setShowSearch(true)
+						// 	console.log("klicka")
+						// }}
 					>
 						Sök
 					</motion.button>

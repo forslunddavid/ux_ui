@@ -1,36 +1,39 @@
 import { useState } from "react"
 import Header from "./components/header"
 import Nav from "./components/nav"
-import Movies from "./components/movies"
+import AllMovies from "./components/allMovies"
 import CircleDiagramLanguage from "./components/circlediagram_language"
 import "./App.css"
 import LineDiagramLength from "./components/linediagram_length"
 import BardiagramMonth from "./components/bardiagram_months"
 import CirclediagramGenre from "./components/circlediagram_genres"
 import MoviesBySearch from "./components/search"
+import FeatureFilms from "./components/movies"
+import Documentaries from "./components/documentaries"
+import Specials from "./components/specials"
 
 function App() {
-	const [showMovies, setShowMovies] = useState(true)
-	const [showSearch, setShowSearch] = useState(false)
-
+	const [selectedCategory, setSelectedCategory] = useState("all")
 	return (
 		<>
 			<Header></Header>
-			<Nav setShowMovies={setShowMovies} setShowSearch={setShowSearch} />
+			<Nav onCategoryChange={setSelectedCategory} />
+			{selectedCategory === "search" && <MoviesBySearch />}
 
-			{showMovies && <Movies />}
+			{selectedCategory === "all" && <AllMovies />}
 
-			{showSearch && <MoviesBySearch />}
+			{selectedCategory === "documentaries" && <Documentaries />}
 
-			{!showMovies && !showSearch && (
-				<>
-					<CircleDiagramLanguage />
-					<LineDiagramLength />
-					<BardiagramMonth />
-					<CirclediagramGenre />
-				</>
-			)}
-			<h2></h2>
+			{selectedCategory === "movies" && <FeatureFilms />}
+
+			{selectedCategory === "specials" && <Specials />}
+
+			<>
+				{selectedCategory === "language" && <CircleDiagramLanguage />}
+				{selectedCategory === "length" && <LineDiagramLength />}
+				{selectedCategory === "month" && <BardiagramMonth />}
+				{selectedCategory === "genre" && <CirclediagramGenre />}
+			</>
 		</>
 	)
 }

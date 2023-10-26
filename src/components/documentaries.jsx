@@ -1,13 +1,13 @@
-import featureFilmsData from "../data/feature-films.json"
+import documentariesData from "../data/documentaries.json"
 
-function FeatureFilms() {
-	const featureFilms = [...featureFilmsData]
+function Documentaries() {
+	const documentaries = [...documentariesData]
 
 	return (
 		<div>
-			<h1>Filmer</h1>
+			<h1>Dokumentärer</h1>
 			<ul className="moviecontainer">
-				{featureFilms.map((movie, index) => (
+				{documentaries.map((movie, index) => (
 					<li className="movie" key={index}>
 						<h3>{movie.Title}</h3>
 						<p>Genre: {movie.Genre}</p>
@@ -21,4 +21,4 @@ function FeatureFilms() {
 	)
 }
 
-export default FeatureFilms
+export default Documentaries
