@@ -1,5 +1,3 @@
-* merge med main
-* build
 * publish
 
 * CSS
