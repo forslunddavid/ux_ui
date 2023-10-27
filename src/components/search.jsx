@@ -28,7 +28,7 @@ const MoviesBySearch = () => {
 
 	return (
 		<div>
-			<section className="search-section">
+			<div className="search-section">
 				<motion.input
 					whileHover={{
 						scale: 1.1,
@@ -40,7 +40,7 @@ const MoviesBySearch = () => {
 					value={searchTerm}
 					onChange={handleChange}
 				/>
-			</section>
+			</div>
 			<div className="search-results">
 				{filteredMovies.length === 1 ? (
 					<>

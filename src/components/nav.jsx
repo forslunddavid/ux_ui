@@ -55,7 +55,7 @@ function Nav({ onCategoryChange }) {
 	}
 
 	return (
-		<section className="navbar" id="navbar">
+		<div className="navbar" id="navbar">
 			<motion.nav initial={false} className="menu">
 				<div className={`menu-button ${filmsOpen ? "open" : ""}`}>
 					<motion.button
@@ -270,7 +270,7 @@ function Nav({ onCategoryChange }) {
 					</motion.button>
 				</div>
 			</motion.nav>
-		</section>
+		</div>
 	)
 }
 
