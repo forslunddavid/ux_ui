@@ -3,10 +3,6 @@
 * publish
 
 * CSS
-	* Styla buttons
-	* border color på meny
-	* färg på meny och knappar?
 	* fixa responsivitet *** inte nödvändigt ***
-	* rensa css som inte används
 
 

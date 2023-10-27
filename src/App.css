@@ -5,7 +5,7 @@
 	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 	line-height: 1.5;
 	font-weight: 400;
-	color: rgba(255, 255, 255, 0.87);
+	color: #f3f3f3;
 	background-color: #242424;
 	width: 100%;
 	min-height: 100vh;
@@ -102,10 +102,11 @@ h1 {
 
 .menu ul {
 	width: 100%;
-	background: white;
+	background: #f3f3f3;
 	display: none;
-	border: solid #d18181 2px;
+	border: solid #242424 2px;
 	border-radius: 4px;
+	/* box-shadow: 0 0 5px 5px red; */
 }
 
 .menu ul.open {
@@ -141,7 +142,7 @@ li {
 }
 
 .card {
-	background-color: #fff;
+	background-color: #f3f3f3;
 	border: solid #d18181 2px;
 	color: #242424;
 	border-radius: 4px;
@@ -151,4 +152,18 @@ li {
 	padding: 2em;
 	margin: 1em 5em 0em 5em;
 	width: 80vw;
+}
+
+.sortingbutton {
+	background-color: #f3f3f3;
+	border: solid #242424 1px;
+	padding: 0.5em 1em;
+	border-radius: 4px;
+	font-size: 16px;
+	cursor: pointer;
+	width: 150px;
+}
+
+.sortingbutton:hover {
+	background-color: #b8b8b8;
 }
