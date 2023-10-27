@@ -1,6 +1,14 @@
-* Sortera språkdata i stigande och fallande ordning VG
-* Skilj mellan kategorier så att man kan se hur många documentaries, features och specials som släpptes under respektive månad. (Tre staplar per månad.) VG
+* merge med main
+* build
+* publish
+
+* Pilarna i menyn animeras inte
+
 * CSS
+	*Styla buttons
+	*border color på meny
+	färg på meny och knappar?
 	* fixa responsivitet *** inte nödvändigt ***
+
 
 

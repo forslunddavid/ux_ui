@@ -25,7 +25,12 @@ const colors = [
 	"#1B325F",
 ]
 
-export function getAllLanguagesConfig(documentaries, specials, featureFilms) {
+export function getAllLanguagesConfig(
+	documentaries,
+	specials,
+	featureFilms,
+	sortByCount
+) {
 	const allData = [...documentaries, ...specials, ...featureFilms]
 	const languageCounter = {}
 
@@ -38,21 +43,34 @@ export function getAllLanguagesConfig(documentaries, specials, featureFilms) {
 		}
 	})
 
-	console.log(allData, "allData")
-
-	const uniqueLanguages = Object.keys(languageCounter)
-	const languageCounterArray = uniqueLanguages.map(
-		(language) => languageCounter[language]
+	// Skapar en array med languageobjekt och count för sortering.
+	const languageCounterArray = Object.entries(languageCounter).map(
+		([language, count]) => ({
+			language,
+			count,
+		})
 	)
 
+	// Sorterar språken baserat på sortByCount parametern.
+	languageCounterArray.sort((a, b) => {
+		if (sortByCount) {
+			return b.count - a.count // Sort from most to least
+		} else {
+			return a.count - b.count // Sort from least to most
+		}
+	})
+
+	const sortedLanguages = languageCounterArray.map((entry) => entry.language)
+	const sortedCounts = languageCounterArray.map((entry) => entry.count)
+
 	return {
-		labels: uniqueLanguages,
+		labels: sortedLanguages,
 		datasets: [
 			{
 				label: "Documentaries by languages",
-				data: languageCounterArray,
+				data: sortedCounts,
 				backgroundColor: colors,
-				radius: "200",
+				radius: "350",
 				pointRadius: 5,
 			},
 		],

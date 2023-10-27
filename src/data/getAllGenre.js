@@ -59,6 +59,7 @@ export function getGenreConfig(documentaries, specials, featureFilms) {
 				label: "Genrer",
 				data: data,
 				backgroundColor: colors,
+				radius: "350",
 			},
 		],
 	}

@@ -1,3 +1,4 @@
+import React, { useState } from "react"
 import {
 	Chart as ChartJS,
 	ArcElement,
@@ -7,6 +8,12 @@ import {
 	LinearScale,
 	CategoryScale,
 } from "chart.js"
+import { Pie } from "react-chartjs-2"
+import { getAllLanguagesConfig } from "../data/getAllLanguage"
+import documentariesData from "../data/documentaries.json"
+import specialsData from "../data/specials.json"
+import featureData from "../data/feature-films.json"
+
 ChartJS.register(
 	ArcElement,
 	BarElement,
@@ -15,46 +22,30 @@ ChartJS.register(
 	Tooltip,
 	Legend
 )
-import { Pie } from "react-chartjs-2"
-
-import documentariesData from "../data/documentaries.json"
-import specialsData from "../data/specials.json"
-import featureData from "../data/feature-films.json"
-
-// import { getSpecialsConfig } from "../data/getSpecials"
-// import { getFeatureFilmsConfig } from "../data/getFeatureFilms"
-// import { getDocumentariesConfig } from "../data/getDocumentaries"
-import { getAllLanguagesConfig } from "../data/getAllLanguage"
-import "../App.css"
-
-// const documentariesConfig = getDocumentariesConfig()
-// const featureFilmsConfig = getFeatureFilmsConfig()
-// const specialsConfig = getSpecialsConfig()
 
 const CircleDiagramLanguage = () => {
+	const [sortByCount, setSortByCount] = useState(true)
+
+	const toggleSorting = () => {
+		setSortByCount(!sortByCount)
+	}
+
 	const allLanguagesConfig = getAllLanguagesConfig(
 		documentariesData,
 		specialsData,
-		featureData
+		featureData,
+		sortByCount
 	)
+
 	return (
 		<section>
 			<div className="card">
 				<h2>Språk alla Filmer</h2>
 				<Pie data={allLanguagesConfig}></Pie>
+				<button onClick={toggleSorting}>
+					{sortByCount ? "Sort Least to Most" : "Sort Most to Least"}
+				</button>
 			</div>
-			{/* <div className="card">
-				<h2>Språk Specials</h2>
-				<Pie data={specialsConfig} />
-			</div>
-			<div className="card">
-				<h2>Språk Filmer</h2>
-				<Pie data={featureFilmsConfig} />
-			</div>
-			<div className="card">
-				<h2>Språk Dokumentärer</h2>
-				<Pie data={documentariesConfig} />
-			</div> */}
 		</section>
 	)
 }
