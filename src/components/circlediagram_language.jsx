@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import { useState } from "react"
 import {
 	Chart as ChartJS,
 	ArcElement,
@@ -43,7 +43,7 @@ const CircleDiagramLanguage = () => {
 				<h2>Språk alla Filmer</h2>
 				<Pie data={allLanguagesConfig}></Pie>
 				<button onClick={toggleSorting}>
-					{sortByCount ? "Sort Least to Most" : "Sort Most to Least"}
+					{sortByCount ? "Sortera på flest" : "Sortera på färst"}
 				</button>
 			</div>
 		</section>

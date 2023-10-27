@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 
-//Principer: Squash när jag trycker på knappen. Follow through, menyknapparna i dropdownen fortsätter röra sig lite efter att meny öppnat sig. Timing för att justera animeringars rörelser. Anticipation, när man hovrar över knapparna så blir de större (indikation på att man kan interagera med dem). Använde Pose to pose när jag designade menyrörelsen. (Exaggeration?)
+//Principer: Squash när jag trycker på knappen. Follow through, menyknapparna i dropdownen fortsätter röra sig lite efter att meny öppnat sig. Timing för att justera animeringars rörelser. Anticipation, när man hovrar över knapparna så blir de större (indikation på att man kan interagera med dem). Använde Pose to pose när jag designade menyrörelsen. (Exaggeration? Staging (skuggor)?)
 
 const itemVariants = {
 	open: {

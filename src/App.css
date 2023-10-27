@@ -75,9 +75,6 @@ h1 {
 	justify-content: space-between;
 	margin: 0px 10px 10px 10px;
 }
-section {
-	display: flex;
-}
 
 .navbar {
 	margin: auto;
@@ -86,7 +83,6 @@ section {
 
 .search-section {
 	display: flex;
-
 	justify-content: center;
 }
 
@@ -121,30 +117,10 @@ section {
 	top: 24%;
 }
 
-.menu > button {
-	background-color: #f3f3f3;
-	border: none;
-	padding: 0.5em 1em;
-	border-radius: 4px;
-	font-size: 16px;
-	cursor: pointer;
-	width: 100%;
-	text-align: left;
-	margin-bottom: 10px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	position: relative;
-}
-
 ul {
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-}
-
-li {
-	display: block;
 }
 
 ul,
@@ -152,15 +128,6 @@ li {
 	list-style: none;
 	margin: 0;
 	padding: 10px;
-}
-
-.open-menu {
-	z-index: 20000;
-}
-
-.movie-single-result-container {
-	display: flex;
-	justify-content: center;
 }
 
 .movie-single-result {
