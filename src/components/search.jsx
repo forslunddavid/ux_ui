@@ -2,6 +2,7 @@ import { useState } from "react"
 import documentariesData from "../data/documentaries.json"
 import featureFilmsData from "../data/feature-films.json"
 import specialsData from "../data/specials.json"
+import { motion } from "framer-motion"
 
 const MoviesBySearch = () => {
 	const [searchTerm, setSearchTerm] = useState("")
@@ -28,7 +29,11 @@ const MoviesBySearch = () => {
 	return (
 		<div>
 			<section className="search-section">
-				<input
+				<motion.input
+					whileHover={{
+						scale: 1.1,
+						transition: { duration: 0.2 },
+					}}
 					className="search-bar"
 					type="text"
 					placeholder="Sök efter filmer"
