@@ -2,8 +2,6 @@
 * build
 * publish
 
-* Pilarna i menyn animeras inte
-
 * CSS
 	*Styla buttons
 	*border color på meny

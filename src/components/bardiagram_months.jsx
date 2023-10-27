@@ -1,4 +1,3 @@
-import React from "react"
 import {
 	Chart as ChartJS,
 	BarElement,
@@ -31,17 +30,17 @@ const BardiagramMonth = () => {
 			{
 				label: "Documentaries",
 				data: documentariesMonthConfig.datasets[0].data,
-				backgroundColor: "rgba(255, 99, 132, 0.6)",
+				backgroundColor: "#ff638499",
 			},
 			{
 				label: "Specials",
 				data: specialsMonthConfig.datasets[0].data,
-				backgroundColor: "rgba(54, 162, 235, 0.6)",
+				backgroundColor: "#36a2eb99",
 			},
 			{
 				label: "Feature Films",
 				data: featureFilmsMonthConfig.datasets[0].data,
-				backgroundColor: "rgba(75, 192, 192, 0.6)",
+				backgroundColor: "#4bc0c099",
 			},
 		],
 	}

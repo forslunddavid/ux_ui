@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState } from "react"
 import { motion } from "framer-motion"
 
 //Principer: Squash när jag trycker på knappen. Follow through, menyknapparna i dropdownen fortsätter röra sig lite efter att meny öppnat sig. Timing för att justera animeringars rörelser. Anticipation, när man hovrar över knapparna så blir de större (indikation på att man kan interagera med dem). Använde Pose to pose när jag designade menyrörelsen. (Exaggeration?)
@@ -33,18 +33,26 @@ function Nav({ onCategoryChange }) {
 		closeMenus()
 	}
 
+	const openFilms = () => {
+		setFilmsOpen(true)
+		setDataOpen(false)
+		if (filmsOpen) {
+			closeMenus()
+		}
+	}
+
+	const openData = () => {
+		setDataOpen(true)
+		setFilmsOpen(false)
+		if (dataOpen) {
+			closeMenus()
+		}
+	}
+
 	const closeMenus = () => {
 		setFilmsOpen(false)
 		setDataOpen(false)
 	}
-
-	// const menuRef = useRef()
-
-	// const handleClickOutside = (e) => {
-	// 	if (openMenu && !menuRef.current.contains(e.target)) {
-	// 		closeMenus()
-	// 	}
-	// }
 
 	return (
 		<section className="navbar" id="navbar">
@@ -56,10 +64,12 @@ function Nav({ onCategoryChange }) {
 							scale: 1.1,
 							transition: { duration: 0.2 },
 						}}
-						onClick={() => setFilmsOpen(!filmsOpen)}
+						onClick={openFilms}
 					>
 						Filmer
 						<motion.div
+							initial={filmsOpen ? "open" : "closed"}
+							animate={filmsOpen ? "open" : "closed"}
 							variants={{
 								open: { rotate: 180 },
 								closed: { rotate: 0 },
@@ -147,17 +157,19 @@ function Nav({ onCategoryChange }) {
 					</motion.ul>
 				</div>
 
-				<div className="menu-button">
+				<div className={`menu-button ${dataOpen ? "open" : ""}`}>
 					<motion.button
 						whileTap={{ scale: 0.9 }}
 						whileHover={{
 							scale: 1.1,
 							transition: { duration: 0.2 },
 						}}
-						onClick={() => setDataOpen(!dataOpen)}
+						onClick={openData}
 					>
 						Data
 						<motion.div
+							initial={dataOpen ? "open" : "closed"}
+							animate={dataOpen ? "open" : "closed"}
 							variants={{
 								open: { rotate: 180 },
 								closed: { rotate: 0 },
@@ -253,10 +265,6 @@ function Nav({ onCategoryChange }) {
 							transition: { duration: 0.2 },
 						}}
 						onClick={() => handleClick("search")}
-						// onClick={() => {
-						// 	setShowSearch(true)
-						// 	console.log("klicka")
-						// }}
 					>
 						Sök
 					</motion.button>
